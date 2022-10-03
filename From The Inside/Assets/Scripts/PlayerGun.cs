@@ -6,6 +6,7 @@ public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private float range = 100f;
     public Camera playerCam;
+    public ParticleSystem muzzleFlash; 
     void Start()
     {
         
@@ -24,8 +25,8 @@ public class PlayerGun : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range);
-        
-            Debug.Log("hit");
+        muzzleFlash.Play();
+        Debug.Log("hit");
         
     }
 }
