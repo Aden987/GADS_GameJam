@@ -6,10 +6,15 @@ public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private float range = 100f;
     public Camera playerCam;
-    public ParticleSystem muzzleFlash; 
+    public ParticleSystem muzzleFlash;
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public PlayerHealth health;
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        health.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -28,6 +33,11 @@ public class PlayerGun : MonoBehaviour
         if (hit.collider.gameObject.tag == "enemy")
         {
             Destroy(hit.collider.gameObject);
+        }
+        else
+        {
+            currentHealth -= 10;
+            health.SetHealth(currentHealth);
         }
         muzzleFlash.Play();
         Debug.Log("hit");
