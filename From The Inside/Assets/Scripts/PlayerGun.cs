@@ -25,6 +25,10 @@ public class PlayerGun : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range);
+        if (hit.collider.gameObject.tag == "enemy")
+        {
+            Destroy(hit.collider.gameObject);
+        }
         muzzleFlash.Play();
         Debug.Log("hit");
         
