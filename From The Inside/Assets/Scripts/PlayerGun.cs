@@ -7,14 +7,19 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private float range = 100f;
     public Camera playerCam;
     public ParticleSystem muzzleFlash;
-    public int maxHealth = 100;
+    public int maxHealth = 50;
     public int currentHealth;
-
-    public PlayerHealth health;
+    public int maxShield = 50;
+    public int currentShield;
+    
+    PlayerHealth health;
     void Start()
     {
+        health = FindObjectOfType<PlayerHealth>();
         currentHealth = maxHealth;
+        currentShield = maxShield;
         health.SetMaxHealth(maxHealth);
+        health.SetMaxShield(maxShield);
     }
 
     // Update is called once per frame
@@ -36,8 +41,16 @@ public class PlayerGun : MonoBehaviour
         }
         else
         {
-            currentHealth -= 10;
-            health.SetHealth(currentHealth);
+            if (currentShield > 0)
+            {
+                currentShield -= 10;
+                health.SetShield(currentShield);
+            }
+            else
+            {
+                currentHealth -= 10;
+                health.SetHealth(currentHealth);
+            }
         }
         muzzleFlash.Play();
         Debug.Log("hit");
