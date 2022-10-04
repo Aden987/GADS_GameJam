@@ -13,9 +13,11 @@ public class PlayerGun : MonoBehaviour
     public int currentShield;
     
     PlayerHealth health;
+    MelleeEnemy melee;
     void Start()
     {
         health = FindObjectOfType<PlayerHealth>();
+        melee = FindObjectOfType<MelleeEnemy>();
         currentHealth = maxHealth;
         currentShield = maxShield;
         health.SetMaxHealth(maxHealth);
@@ -35,9 +37,9 @@ public class PlayerGun : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range);
-        if (hit.collider.gameObject.tag == "enemy")
+        if (hit.collider.gameObject.tag == "melee")
         {
-            Destroy(hit.collider.gameObject);
+            melee.SetMeleeHealth();
         }
         else
         {
