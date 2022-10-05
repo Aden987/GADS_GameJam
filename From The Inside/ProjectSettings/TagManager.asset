@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - melee
+  - tank
+  - range
   layers:
   - Default
   - TransparentFX

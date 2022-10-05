@@ -26,6 +26,10 @@ public class EnemyController : MonoBehaviour
             {
                 FaceTarget();
             }
+            /*if (gameObject.tag == "range")
+            {
+                range.Fire();
+            }*/
         }
     }
 

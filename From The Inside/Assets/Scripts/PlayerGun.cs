@@ -14,10 +14,14 @@ public class PlayerGun : MonoBehaviour
     
     PlayerHealth health;
     MelleeEnemy melee;
+    TankEnemy tank;
+    RangeEnemy lightE;
     void Start()
     {
         health = FindObjectOfType<PlayerHealth>();
         melee = FindObjectOfType<MelleeEnemy>();
+        tank = FindObjectOfType<TankEnemy>();
+        lightE = FindObjectOfType<RangeEnemy>();
         currentHealth = maxHealth;
         currentShield = maxShield;
         health.SetMaxHealth(maxHealth);
@@ -37,11 +41,20 @@ public class PlayerGun : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range);
+        muzzleFlash.Play();
         if (hit.collider.gameObject.tag == "melee")
         {
             melee.SetMeleeHealth();
         }
-        else
+        if (hit.collider.gameObject.tag == "tank")
+        {
+            tank.SetTankHealth();
+        }
+        if (hit.collider.gameObject.tag == "range")
+        {
+            lightE.SetRangeHealth();
+        }
+        /*else
         {
             if (currentShield > 0)
             {
@@ -53,8 +66,8 @@ public class PlayerGun : MonoBehaviour
                 currentHealth -= 10;
                 health.SetHealth(currentHealth);
             }
-        }
-        muzzleFlash.Play();
+        }*/
+        //muzzleFlash.Play();
         Debug.Log("hit");
         
     }
