@@ -37,7 +37,6 @@ Transform:
   m_Children:
   - {fileID: 2010167373280595624}
   - {fileID: 2987924263407983169}
-  - {fileID: 3386007855832820525}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 86.997, z: 0}
@@ -155,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loofRadius: 10
-  target: {fileID: 0}
+  target: {fileID: 9111669835968401097, guid: 40d33f315b93a9b439f07388d009cf71, type: 3}
 --- !u!114 &3386007854247979591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,37 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeSlider: {fileID: 2010167372821333560}
---- !u!1 &3386007855832820524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3386007855832820525}
-  m_Layer: 0
-  m_Name: Waypoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3386007855832820525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3386007855832820524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0, z: 0.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3386007854247979598}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  range: {fileID: 3386007854247979590}
 --- !u!1001 &3386007853969538474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,7 +338,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2433402233809970533, guid: 5294fb1cccd2bcd43ac78dd0cff7bfaa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5294fb1cccd2bcd43ac78dd0cff7bfaa, type: 3}
 --- !u!114 &2010167372821333560 stripped
 MonoBehaviour:

@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8261462279587291154}
   - component: {fileID: 8261462279587291153}
   - component: {fileID: 8261462279587291144}
-  - component: {fileID: 8261462279587291151}
+  - component: {fileID: 9163091712629253188}
+  - component: {fileID: 5444985880659138268}
   m_Layer: 0
   m_Name: Enemy Tank
   m_TagString: tank
@@ -154,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loofRadius: 10
-  target: {fileID: 0}
---- !u!114 &8261462279587291151
+  target: {fileID: 9111669835968401097, guid: 40d33f315b93a9b439f07388d009cf71, type: 3}
+--- !u!114 &9163091712629253188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +168,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000a177ddf65c5d4db77355bf9f37d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
   tankSlider: {fileID: 5169732747038015327}
+  tank: {fileID: 8261462279587291152}
+--- !u!114 &5444985880659138268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261462279587291152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c797fac4ba9de746bad1d8b4129a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankHealth: 50
+  currentTankHealth: 0
 --- !u!1001 &8261462279547065400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,7 +293,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2433402233809970533, guid: 5294fb1cccd2bcd43ac78dd0cff7bfaa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5294fb1cccd2bcd43ac78dd0cff7bfaa, type: 3}
 --- !u!114 &5169732747038015327 stripped
 MonoBehaviour:

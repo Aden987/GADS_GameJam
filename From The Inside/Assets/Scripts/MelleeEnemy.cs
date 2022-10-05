@@ -9,6 +9,7 @@ public class MelleeEnemy : MonoBehaviour
     int currentHealth;
     int damage = 10;
     public Slider meleeSlider;
+    public GameObject melee;
 
     void Start()
     {
@@ -28,7 +29,11 @@ public class MelleeEnemy : MonoBehaviour
         meleeSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            if (gameObject != null)
+            {
+                Destroy(melee);
+            }
+            //Destroy(this.gameObject);
         }
     }
 

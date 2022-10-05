@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int tankHealth = 50;
+    public int currentTankHealth;
     private Rigidbody rb;
     private float acceleration;
     private float turn;

@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class TankEnemy : MonoBehaviour
 {
-    int maxHealth = 50;
-    int currentHealth;
+    public float maxHealth;
+    public  float currentHealth;
     int damage = 5;
     public Slider tankSlider;
+    public GameObject tank;
+    TankHealth pc;
     void Start()
     {
-        currentHealth = maxHealth;
+        pc = FindObjectOfType<TankHealth>();
+        pc.currentHealth = pc.maxHealth;
         SetTankMaxHealth();
     }
 
-    // Update is called once per frame
+     //Update is called once per frame
     void Update()
     {
         
@@ -23,17 +26,17 @@ public class TankEnemy : MonoBehaviour
 
     public void SetTankHealth()
     {
-        currentHealth -= 10;
-        tankSlider.value = currentHealth;
-        if (currentHealth <= 0)
+        pc.currentHealth -= 10;
+        tankSlider.value = pc.currentHealth;
+        if (pc.currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+           Destroy(tank);
         }
     }
 
     public void SetTankMaxHealth()
     {
-        tankSlider.maxValue = maxHealth;
-        tankSlider.value = maxHealth;
+        tankSlider.maxValue = pc.maxHealth;
+        tankSlider.value = pc.maxHealth;
     }
 }

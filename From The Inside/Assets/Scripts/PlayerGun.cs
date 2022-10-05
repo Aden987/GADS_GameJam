@@ -49,6 +49,7 @@ public class PlayerGun : MonoBehaviour
         if (hit.collider.gameObject.tag == "tank")
         {
             tank.SetTankHealth();
+            Debug.Log("hit");
         }
         if (hit.collider.gameObject.tag == "range")
         {
@@ -68,7 +69,7 @@ public class PlayerGun : MonoBehaviour
             }
         }*/
         //muzzleFlash.Play();
-        Debug.Log("hit");
+        
         
     }
 }

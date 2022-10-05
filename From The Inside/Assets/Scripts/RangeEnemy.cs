@@ -8,6 +8,7 @@ public class RangeEnemy : MonoBehaviour
     int maxHealth = 20;
     int currentHealth;
     public Slider rangeSlider;
+    public GameObject range;
     void Start()
     {
         currentHealth = maxHealth;
@@ -26,7 +27,10 @@ public class RangeEnemy : MonoBehaviour
         rangeSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            if (gameObject != null)
+            {
+                Destroy(range);
+            }
         }
     }
 
